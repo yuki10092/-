@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>mission5</title>
+</head>
+<body>
+	<h1>電卓<h1>
+    <form name="dentaku">
+    <table>
+        <tr>
+            <td>
+            <input type="text" class="display" name="display" value=""disabled> 
+            </td>
+         </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="getculc(this)">
+                <input type="button" value="8" onclick="getculc(this)">
+                <input type="button" value="9" onclick="getculc(this)">
+                <input type="button" value="/" class="operator" onclick="getculc(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="getculc(this)">
+                <input type="button" value="5" onclick="getculc(this)">
+                <input type="button" value="6" onclick="getculc(this)">
+                <input type="button" value="*" class="operator" onclick="getculc(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="getculc(this)">
+                <input type="button" value="2" onclick="getculc(this)">
+                <input type="button" value="3" onclick="getculc(this)">
+                <input type="button" value="-" class="operator" onclick="getculc(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="0" onclick="getculc(this)">
+                <input type="button" value="." onclick="getculc(this)">
+                <input type="button" value="+" class="operator" onclick="getculc(this)">
+                <input type="button" value="=" class="equal" onclick="getculc(this)">
+                <input type="button" value="C" onclick="getculc(this)">
+            </td>
+        </tr>
+    </table>
+</form>
+    <script >
+function getculc(btn){
+if(btn.value=="="){
+   if(eval(document.dentaku.display.value)=="Infinity" ){
+    document.dentaku.display.value="ゼロでは割れません。"
+}
+else{ document.dentaku.display.value=eval(document.dentaku.display.value)
+}
+}
+
+else if(btn.value=="C"){
+    document.dentaku.display.value=""
+}
+
+else{
+document.dentaku.display.value +=btn.value
+}
+
+
+
+
+}
+</script>
+</body>
+</html>
